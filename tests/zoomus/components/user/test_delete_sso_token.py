@@ -30,7 +30,7 @@ class DeleteSSOTokenV2TestCase(unittest.TestCase):
 
     def test_requires_id(self):
         with self.assertRaisesRegexp(ValueError, "'id' must be set"):
-            self.component.update_settings()
+            self.component.delete_sso_token()
 
 
 if __name__ == "__main__":
