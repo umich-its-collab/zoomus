@@ -103,6 +103,10 @@ class UserComponentV2(base.BaseComponent):
         util.require_keys(kwargs, "id")
         return self.delete_request("/users/{}".format(kwargs.get("id")), params=kwargs)
 
+    def delete_sso_token(self, **kwargs):
+        util.require_keys(kwargs, "id")
+        return self.delete_request("/users/{}/token".format(kwargs.get("id")), params=kwargs)
+
     def get(self, **kwargs):
         util.require_keys(kwargs, "id")
         return self.get_request("/users/{}".format(kwargs.get("id")), params=kwargs)
